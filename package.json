@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start --reset-cache",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
+    "clean:android": "cd android/ && ./gradlew clean && cd .. && npx react-native run-android"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
